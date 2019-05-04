@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.0.6.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+    <groupId>com.dharbor.kyp</groupId>
+    <artifactId>kyp-enrollment</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <spring-cloud.version>Finchley.SR2</spring-cloud.version>
+        <kyp-enrollment-version>1.0-SNAPSHOT</kyp-enrollment-version>
+        <swagger-version>2.9.2</swagger-version>
+        <spring-boot-admin.version>2.0.4</spring-boot-admin.version>
+        <docker.repo.prefix>set-nexus.digitalharbor.us:18444</docker.repo.prefix>
+        <docker.image.prefix>kyp-enrollment</docker.image.prefix>
+        <docker.plugin.version>1.2.0</docker.plugin.version>
+        <jacoco.plugin.version>0.8.3</jacoco.plugin.version>
+    </properties>
+
+    <repositories>
+       <repository>
+            <id>set-nexus-snapshots</id>
+            <url>https://set-nexus.digitalharbor.us:8443/repository/maven-snapshots/</url>
+        </repository>
+
+        <repository>
+            <id>set-nexus-releases</id>
+            <url>https://set-nexus.digitalharbor.us:8443/repository/maven-releases/</url>
+        </repository>
+
+        <repository>
+            <id>maven-group</id>
+            <url>http://172.16.4.49:8081/repository/maven-group/</url>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <repository>
+            <id>maven-releases</id>
+            <name>Releases</name>
+            <url>http://172.16.4.49:8081/repository/maven-releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>maven-snapshots</id>
+            <name>Snapshot</name>
+            <url>http://172.16.4.49:8081/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <dependencyManagement>
+        <dependencies>
+            <!--<dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring.boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>-->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${swagger-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${swagger-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-dependencies</artifactId>
+                <version>${spring-boot-admin.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>set-nexus-snapshots</id>
+            <url>https://set-nexus.digitalharbor.us:8443/repository/maven-snapshots/</url>
+        </pluginRepository>
+    </pluginRepositories>
+
+    <modules>
+	    <!-- <module>config-service</module>
+        <module>discovery-service</module>
+        <module>gateway-service</module>
+        <module>screening-summary-service</module>
+        <module>screening-dbchecks-service</module>
+        <module>search-service</module>
+        <module>case-export-service</module>
+        <module>content-service</module>
+        <module>letter-service</module>
+        <module>comments-service</module>
+        <module>enrollment-commons</module>
+        <module>webresearch-service</module>
+        <module>tr-service</module>
+        <module>riskscore-service</module>
+        <module>webswing-service</module>
+        <module>accounts-service</module>
+        <module>portal-service</module>
+        <module>provider360-service</module>
+		<module>global-search-service</module>
+        <module>admin-service</module>
+        <module>resolution-service</module>
+        <module>events-tracker-service</module>
+        <module>events-tracker-client</module>
+		<module>conversional-state-machine</module>
+	<module>analytics-service</module> -->
+        <module>workflow-service</module>
+    </modules>
+
+</project>
