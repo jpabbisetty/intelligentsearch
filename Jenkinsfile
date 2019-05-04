@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        git(branch: 'master', credentialsId: '08576372-f1e5-470c-9890-37ad5f6f8a6c', url: 'git@git.digitalharbor.us:set/set-fusion.git')
+        git(branch: 'master', credentialsId: '00f858db652d119c663c85832c9039b2bb34c92a', url: 'https://github.com/jpabbisetty/intelligentsearch.git')
       }
     }
   }
