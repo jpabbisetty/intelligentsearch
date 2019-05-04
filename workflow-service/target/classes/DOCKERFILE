@@ -1,0 +1,4 @@
+FROM java:8
+EXPOSE  10600
+WORKDIR /data
+ENTRYPOINT ["java","-jar","/data/kyp4-fusion-search-0.0.1.jar"]
